@@ -3,3 +3,4 @@
 .DS_Store
 *.exe
 node_modules
+ui/build/*.js

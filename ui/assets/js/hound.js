@@ -1,4 +1,6 @@
-/** @jsx React.DOM */
+import $ from 'jquery';
+import React from 'react';
+import UrlToRepo from './lib/UrlToRepo';
 
 var Signal = function() {
 };
@@ -283,7 +285,7 @@ var Model = {
   },
 
   UrlToRepo: function(repo, path, line, rev) {
-    return lib.UrlToRepo(this.repos[repo], path, line, rev);
+    return UrlToRepo(this.repos[repo], path, line, rev);
   }
 
 };

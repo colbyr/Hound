@@ -157,7 +157,7 @@ func renderForPrd(w io.Writer, c *content, cfgJson string) error {
 func assetDir() string {
 	_, file, _, _ := runtime.Caller(0)
 	dir, err := filepath.Abs(
-		filepath.Join(filepath.Dir(file), "assets"))
+		filepath.Join(filepath.Dir(file), "build"))
 	if err != nil {
 		log.Panic(err)
 	}

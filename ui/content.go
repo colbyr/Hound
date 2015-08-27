@@ -2,12 +2,6 @@ package ui
 
 import "html/template"
 
-// Current versions of some dependencies.
-const (
-	ReactVersion  = "0.12.2"
-	JQueryVersion = "2.1.3"
-)
-
 var contents map[string]*content
 
 type content struct {
@@ -33,7 +27,6 @@ func init() {
 		"/": &content{
 			template: "index.tpl.html",
 			sources: []string{
-				"js/common.js",
 				"js/hound.js",
 			},
 		},
@@ -41,7 +34,6 @@ func init() {
 		"/excluded_files.html": &content{
 			template: "excluded_files.tpl.html",
 			sources: []string{
-				"js/common.js",
 				"js/excluded_files.js",
 			},
 		},

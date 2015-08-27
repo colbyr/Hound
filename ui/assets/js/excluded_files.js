@@ -1,8 +1,11 @@
-/** @jsx React.DOM */
+import ExpandVars from './lib/ExpandVars';
+import $ from 'jquery';
+import React from 'react';
+import UrlToRepo from './lib/UrlToRepo';
 
 var ExcludedRow = React.createClass({
   render: function() {
-    var url = lib.UrlToRepo(this.props.repo, this.props.file.Filename, this.props.rev);
+    var url = UrlToRepo(this.props.repo, this.props.file.Filename, this.props.rev);
     return (
       <tr>
         <td className="name">

@@ -6,7 +6,8 @@ ALL: ui/bindata.go
 
 ui/bindata.go: .build/bin/go-bindata $(wildcard ui/assets/**/*)
 	rsync -r --exclude '*.js' ui/assets/* .build/ui
-	jsx --no-cache-dir ui/assets/js .build/ui/js
+	webpack --config webpack.config.js ui/assets/js/hound.js .build/ui/js/hound.js
+	webpack --config webpack.config.js ui/assets/js/exclued_files.js .build/ui/js/excluded_files.js
 	$< -o $@ -pkg ui -prefix .build/ui -nomemcopy .build/ui/...
 
 clean:
